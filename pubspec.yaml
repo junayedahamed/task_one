@@ -65,6 +65,7 @@ flutter:
     - images/sweater.webp
     - images/jacket.webp
     - images/t-shirt.webp
+    - images/running.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
