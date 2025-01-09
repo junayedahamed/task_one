@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:shopping/home_screen.dart';
+import 'package:shopping/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(Duration(seconds: 3), () {
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => HomeScreen(),
+          builder: (context) => LoginPage(),
         ),
       );
     });
