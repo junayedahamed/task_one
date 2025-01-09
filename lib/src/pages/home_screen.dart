@@ -21,6 +21,12 @@ class HomeScreen extends StatelessWidget {
     3.8,
   ];
 
+  final List<String> images = [
+    "images/jacket.webp",
+    "images/sweater.webp",
+    "images/t-shirt.webp"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                               Column(
                                 children: [
                                   Image.asset(
-                                    "images/splash.jpg",
+                                    images[index],
                                     height: 237,
                                     width: 115,
                                     fit: BoxFit.cover,
@@ -161,7 +167,7 @@ class HomeScreen extends StatelessWidget {
                               Column(
                                 children: [
                                   Image.asset(
-                                    "images/splash.jpg",
+                                    images[index],
                                     height: 180,
                                     width: 110,
                                     fit: BoxFit.cover,
