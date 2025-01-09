@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/color.dart';
+import 'package:shopping/src/color/color.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});

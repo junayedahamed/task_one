@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/color.dart';
-import 'package:shopping/login_page.dart';
+import 'package:shopping/src/color/color.dart';
+import 'package:shopping/src/login%20registration/login_page.dart';
 
 class RecovaryPage extends StatelessWidget {
   const RecovaryPage({super.key});

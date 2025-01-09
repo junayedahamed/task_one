@@ -1,10 +1,10 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:shopping/account_page.dart';
-import 'package:shopping/cart_page.dart';
-import 'package:shopping/color.dart';
-import 'package:shopping/faviorite_page.dart';
-import 'package:shopping/home_screen.dart';
+import 'package:shopping/src/pages/account_page.dart';
+import 'package:shopping/src/pages/cart_page.dart';
+import 'package:shopping/src/color/color.dart';
+import 'package:shopping/src/pages/faviorite_page.dart';
+import 'package:shopping/src/pages/home_screen.dart';
 
 class NavigatorPage extends StatefulWidget {
   const NavigatorPage({super.key});

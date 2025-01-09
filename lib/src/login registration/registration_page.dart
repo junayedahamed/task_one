@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/color.dart';
-import 'package:shopping/forgot_passwors_page.dart';
-import 'package:shopping/home_screen.dart';
-import 'package:shopping/navigator.dart';
-import 'package:shopping/registration_page.dart';
+import 'package:shopping/src/color/color.dart';
+import 'package:shopping/src/pages/home_screen.dart';
+import 'package:shopping/src/login%20registration/login_page.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegistrationPage extends StatelessWidget {
+  const RegistrationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +12,7 @@ class LoginPage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Text(
-          "Login",
+          "Register",
           style: TextStyle(
             fontSize: 25,
             color: primaryColor,
@@ -32,7 +30,19 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 220,
+                height: 120,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.person,
+                  ),
+                  label: Text("Name"),
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(
+                height: 10,
               ),
               TextFormField(
                 decoration: InputDecoration(
@@ -61,49 +71,47 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 2,
+                height: 10,
               ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => ForgotPassworsPage(),
-                      ),
-                    );
-                  },
-                  child: Text(
-                    "Forgot Password",
-                    style: TextStyle(
-                      color: primaryColor,
-                    ),
+              TextFormField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.key,
+                    size: 22,
+                  ),
+                  label: Text(
+                    "Confirm Password",
+                  ),
+                  border: OutlineInputBorder(),
+                  suffixIcon: Icon(
+                    Icons.remove_red_eye,
                   ),
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 30,
               ),
               InkWell(
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => NavigatorPage(),
+                      builder: (context) => HomeScreen(),
                     ),
                   );
                 },
                 child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: primaryColor,
+                  ),
                   height: 40,
                   width: 250,
-                  decoration: BoxDecoration(
-                    color: primaryColor,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
                   child: Center(
                     child: Text(
-                      "Login",
+                      "Create an acccount",
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: Colors.white,
                       ),
                     ),
@@ -130,7 +138,7 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Dont have any account?",
+                    "Already have an account?",
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.black,
@@ -140,12 +148,12 @@ class LoginPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => RegistrationPage(),
+                          builder: (context) => LoginPage(),
                         ),
                       );
                     },
                     child: Text(
-                      "Register",
+                      "Login",
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.blue,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/color.dart';
-import 'package:shopping/recovary_page.dart';
+import 'package:shopping/src/color/color.dart';
+import 'package:shopping/src/account%20recovary/recovary_page.dart';
 
 class VerfyCodePage extends StatelessWidget {
   const VerfyCodePage({super.key});

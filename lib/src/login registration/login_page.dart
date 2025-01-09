@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/color.dart';
-import 'package:shopping/home_screen.dart';
-import 'package:shopping/login_page.dart';
+import 'package:shopping/src/color/color.dart';
+import 'package:shopping/src/account%20recovary/forgot_passwors_page.dart';
+import 'package:shopping/src/pages/navigator.dart';
+import 'package:shopping/src/login%20registration/registration_page.dart';
 
-class RegistrationPage extends StatelessWidget {
-  const RegistrationPage({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class RegistrationPage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Text(
-          "Register",
+          "Login",
           style: TextStyle(
             fontSize: 25,
             color: primaryColor,
@@ -30,19 +31,7 @@ class RegistrationPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 120,
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    Icons.person,
-                  ),
-                  label: Text("Name"),
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(
-                height: 10,
+                height: 220,
               ),
               TextFormField(
                 decoration: InputDecoration(
@@ -71,47 +60,49 @@ class RegistrationPage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 2,
               ),
-              TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    Icons.key,
-                    size: 22,
-                  ),
-                  label: Text(
-                    "Confirm Password",
-                  ),
-                  border: OutlineInputBorder(),
-                  suffixIcon: Icon(
-                    Icons.remove_red_eye,
+              Align(
+                alignment: Alignment.bottomRight,
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ForgotPassworsPage(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Forgot Password",
+                    style: TextStyle(
+                      color: primaryColor,
+                    ),
                   ),
                 ),
               ),
               SizedBox(
-                height: 30,
+                height: 20,
               ),
               InkWell(
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
+                      builder: (context) => NavigatorPage(),
                     ),
                   );
                 },
                 child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: primaryColor,
-                  ),
                   height: 40,
                   width: 250,
+                  decoration: BoxDecoration(
+                    color: primaryColor,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: Center(
                     child: Text(
-                      "Create an acccount",
+                      "Login",
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 20,
                         color: Colors.white,
                       ),
                     ),
@@ -138,7 +129,7 @@ class RegistrationPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Already have an account?",
+                    "Dont have any account?",
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.black,
@@ -148,12 +139,12 @@ class RegistrationPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => LoginPage(),
+                          builder: (context) => RegistrationPage(),
                         ),
                       );
                     },
                     child: Text(
-                      "Login",
+                      "Register",
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.blue,

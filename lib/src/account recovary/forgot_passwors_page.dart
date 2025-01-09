@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/color.dart';
-import 'package:shopping/verfy_code_page.dart';
+import 'package:shopping/src/color/color.dart';
+import 'package:shopping/src/account%20recovary/verfy_code_page.dart';
 
 class ForgotPassworsPage extends StatelessWidget {
   const ForgotPassworsPage({super.key});
