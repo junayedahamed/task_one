@@ -30,25 +30,68 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: Text(
-          "HomePage",
-          style: TextStyle(
-            color: primaryColor,
-          ),
-        ),
-      ),
+      // appBar: AppBar(
+      //   automaticallyImplyLeading: false,
+      //   // centerTitle: true,
+      //   // title: Text(
+      //   //   "HomePage",
+      //   //   style: TextStyle(
+      //   //     color: primaryColor,
+      //   //   ),
+      //   // ),
+      // ),
       body: SizedBox.expand(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 15,
+              height: 10,
+            ),
+            Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(5),
+                  height: 50,
+                  width: MediaQuery.of(context).size.width / 1.5,
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(
+                      alpha: 0.09,
+                    ),
+                  ),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: primaryColor,
+                      ),
+                      border: InputBorder.none,
+                      hintText: "Enter your search",
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 35,
+                ),
+                Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(
+                      alpha: 0.09,
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.notifications,
+                    color: primaryColor,
+                  ),
+                )
+              ],
             ),
             SizedBox(
-              height: 250,
+              height: 5,
+            ),
+            SizedBox(
+              height: 230,
               width: double.infinity,
               child: ListView.builder(
                 itemCount: price.length,
@@ -66,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     images[index],
-                                    height: 237,
+                                    height: 215,
                                     width: 115,
                                     fit: BoxFit.cover,
                                   ),
@@ -133,7 +176,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 52,
+              height: 25,
             ),
             Text(
               "Best sells",

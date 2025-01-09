@@ -32,6 +32,10 @@ class ForgotPassworsPage extends StatelessWidget {
               ),
               TextFormField(
                 decoration: InputDecoration(
+                  suffix: Icon(
+                    Icons.clear,
+                    color: primaryColor,
+                  ),
                   label: Text(
                     "Enter email",
                   ),
