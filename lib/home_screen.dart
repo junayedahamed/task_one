@@ -3,6 +3,7 @@ import 'package:shopping/color.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
+
   final List name = [
     "hoddie",
     "Jacket",
@@ -24,6 +25,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(
           "HomePage",
@@ -43,10 +45,6 @@ class HomeScreen extends StatelessWidget {
               height: 250,
               width: double.infinity,
               child: ListView.builder(
-                // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                //   crossAxisCount: 2,
-                //   childAspectRatio: 2 / 3,
-                // ),
                 itemCount: price.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
@@ -79,15 +77,28 @@ class HomeScreen extends StatelessWidget {
                                   Spacer(),
                                   Row(
                                     children: [
-                                      Text(
-                                        "Price:${price[index]}",
+                                      Column(
+                                        children: [
+                                          Text(
+                                            "Price:${price[index]}",
+                                          ),
+                                          SizedBox(
+                                            width: 25,
+                                          ),
+                                          Text(
+                                            "${ratting[index]}" "⭐",
+                                          ),
+                                        ],
                                       ),
                                       SizedBox(
-                                        width: 25,
+                                        width: 18,
                                       ),
-                                      Text(
-                                        "${ratting[index]}" "⭐",
-                                      ),
+                                      IconButton(
+                                          onPressed: () {},
+                                          icon: Icon(
+                                            Icons.shopping_cart,
+                                            color: primaryColor,
+                                          ))
                                     ],
                                   )
                                 ],
@@ -170,11 +181,18 @@ class HomeScreen extends StatelessWidget {
                                 ],
                               ),
                               Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     "Description:",
                                   ),
-                                  Spacer(),
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.shopping_cart,
+                                        color: primaryColor,
+                                      ))
                                 ],
                               )
                             ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping/color.dart';
 import 'package:shopping/forgot_passwors_page.dart';
 import 'package:shopping/home_screen.dart';
+import 'package:shopping/navigator.dart';
 import 'package:shopping/registration_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -87,7 +88,7 @@ class LoginPage extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
+                      builder: (context) => NavigatorPage(),
                     ),
                   );
                 },
