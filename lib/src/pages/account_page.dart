@@ -35,7 +35,7 @@ class _AccountPageState extends State<AccountPage> {
                     );
                     if (image != null) {
                       byte = await image.readAsBytes();
-                      print(byte!.length.toString());
+                      // print(byte!.length.toString());
                       setState(
                         () {},
                       );
@@ -46,13 +46,20 @@ class _AccountPageState extends State<AccountPage> {
                           Icons.account_circle,
                           size: 120,
                         )
-                      : Image.memory(
-                          byte!,
-                          fit: BoxFit.cover,
+                      : Container(
                           height: 120,
                           width: 120,
-                          // centerSlice: Rect.fromCircle(
-                          //     center: Offset(50, 50), radius: 15),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(60),
+                          ),
+                          child: Image.memory(
+                            byte!,
+                            fit: BoxFit.cover,
+                            height: 120,
+                            width: 120,
+                            // centerSlice: Rect.fromCircle(
+                            //     center: Offset(50, 50), radius: 15),
+                          ),
                         ),
                 )),
                 Column(
